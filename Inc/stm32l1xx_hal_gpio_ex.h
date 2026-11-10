@@ -151,28 +151,28 @@ extern "C" {
 
 
 #if defined (STM32L151xCA) || defined (STM32L151xD) || defined (STM32L152xCA) || defined (STM32L152xD) || defined (STM32L162xCA) || defined (STM32L162xD) || defined (STM32L151xE) || defined (STM32L151xDX) || defined (STM32L152xE) || defined (STM32L152xDX) || defined (STM32L162xE) || defined (STM32L162xDX)
-#define GPIO_GET_INDEX(__GPIOx__) (((__GPIOx__) == (GPIOA))? 0U :\
-                                   ((__GPIOx__) == (GPIOB))? 1U :\
-                                   ((__GPIOx__) == (GPIOC))? 2U :\
-                                   ((__GPIOx__) == (GPIOD))? 3U :\
-                                   ((__GPIOx__) == (GPIOE))? 4U :\
-                                   ((__GPIOx__) == (GPIOH))? 5U :\
-                                   ((__GPIOx__) == (GPIOF))? 6U : 7U)
+#define GPIO_GET_INDEX(__GPIOx__) (((__GPIOx__) == (GPIOA))? 0UL :\
+                                   ((__GPIOx__) == (GPIOB))? 1UL :\
+                                   ((__GPIOx__) == (GPIOC))? 2UL :\
+                                   ((__GPIOx__) == (GPIOD))? 3UL :\
+                                   ((__GPIOx__) == (GPIOE))? 4UL :\
+                                   ((__GPIOx__) == (GPIOH))? 5UL :\
+                                   ((__GPIOx__) == (GPIOF))? 6UL : 7UL)
 #endif
 
 #if defined (STM32L151xB) || defined (STM32L151xBA) || defined (STM32L151xC) || defined (STM32L152xB) || defined (STM32L152xBA) || defined (STM32L152xC) || defined (STM32L162xC)
-#define GPIO_GET_INDEX(__GPIOx__) (((__GPIOx__) == (GPIOA))? 0U :\
-                                   ((__GPIOx__) == (GPIOB))? 1U :\
-                                   ((__GPIOx__) == (GPIOC))? 2U :\
-                                   ((__GPIOx__) == (GPIOD))? 3U :\
-                                   ((__GPIOx__) == (GPIOE))? 4U : 5U)
+#define GPIO_GET_INDEX(__GPIOx__) (((__GPIOx__) == (GPIOA))? 0UL :\
+                                   ((__GPIOx__) == (GPIOB))? 1UL :\
+                                   ((__GPIOx__) == (GPIOC))? 2UL :\
+                                   ((__GPIOx__) == (GPIOD))? 3UL :\
+                                   ((__GPIOx__) == (GPIOE))? 4UL : 5UL)
 #endif
 
 #if defined (STM32L100xB) || defined (STM32L100xBA) || defined (STM32L100xC)
-#define GPIO_GET_INDEX(__GPIOx__) (((__GPIOx__) == (GPIOA))? 0U :\
-                                   ((__GPIOx__) == (GPIOB))? 1U :\
-                                   ((__GPIOx__) == (GPIOC))? 2U :\
-                                   ((__GPIOx__) == (GPIOD))? 3U : 5U)
+#define GPIO_GET_INDEX(__GPIOx__) (((__GPIOx__) == (GPIOA))? 0UL :\
+                                   ((__GPIOx__) == (GPIOB))? 1UL :\
+                                   ((__GPIOx__) == (GPIOC))? 2UL :\
+                                   ((__GPIOx__) == (GPIOD))? 3UL : 5UL)
 #endif
 
 

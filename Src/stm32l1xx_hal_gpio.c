@@ -228,7 +228,7 @@ void HAL_GPIO_Init(GPIO_TypeDef  *GPIOx, GPIO_InitTypeDef *GPIO_Init)
         /* Configure Alternate function mapped with the current IO */
         /* Identify AFRL or AFRH register based on IO position*/
         temp = GPIOx->AFR[position >> 3];
-        CLEAR_BIT(temp, 0xFU << ((uint32_t)(position & 0x07U) * 4));
+        CLEAR_BIT(temp, 0xFUL << ((uint32_t)(position & 0x07U) * 4));
         SET_BIT(temp, (uint32_t)(GPIO_Init->Alternate) << (((uint32_t)position & 0x07U) * 4));
         GPIOx->AFR[position >> 3] = temp;
       }
@@ -247,7 +247,7 @@ void HAL_GPIO_Init(GPIO_TypeDef  *GPIOx, GPIO_InitTypeDef *GPIO_Init)
         __HAL_RCC_SYSCFG_CLK_ENABLE();
 
         temp = SYSCFG->EXTICR[position >> 2];
-        CLEAR_BIT(temp, (0x0FU) << (4 * (position & 0x03)));
+        CLEAR_BIT(temp, (0x0FUL) << (4 * (position & 0x03)));
         SET_BIT(temp, (GPIO_GET_INDEX(GPIOx)) << (4 * (position & 0x03)));
         SYSCFG->EXTICR[position >> 2] = temp;
 
@@ -320,7 +320,7 @@ void HAL_GPIO_DeInit(GPIO_TypeDef  *GPIOx, uint32_t GPIO_Pin)
       /* Clear the External Interrupt or Event for the current IO */
 
       tmp = SYSCFG->EXTICR[position >> 2];
-      tmp &= ((0x0FU) << (4 * (position & 0x03)));
+      tmp &= ((0x0FUL) << (4 * (position & 0x03)));
       if (tmp == (GPIO_GET_INDEX(GPIOx) << (4 * (position & 0x03))))
       {
         /* Clear EXTI line configuration */
@@ -331,7 +331,7 @@ void HAL_GPIO_DeInit(GPIO_TypeDef  *GPIOx, uint32_t GPIO_Pin)
         CLEAR_BIT(EXTI->FTSR, (uint32_t)iocurrent);
         CLEAR_BIT(EXTI->RTSR, (uint32_t)iocurrent);
 
-        tmp = (0x0FU) << (4 * (position & 0x03));
+        tmp = (0x0FUL) << (4 * (position & 0x03));
         CLEAR_BIT(SYSCFG->EXTICR[position >> 2], tmp);
       }
 
